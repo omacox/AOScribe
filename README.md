@@ -34,7 +34,7 @@
 
 ### Profile
 
-<img src="./images/Profile.PNG" alt="Profile Page" width="200">
+<img src="./images/profile.PNG" alt="Profile Page" width="200">
 
 ### Message
 
