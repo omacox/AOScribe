@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    command: gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - .:/my_django_project
+    ports:
+      - "8000:8000"
+    environment:
+      - DEBUG=0
+      - SECRET_KEY="django-insecure-58i3=!953h_#%cilt^z745$c*=ht_4i-sy^f7jrrskk)p#g5w5"
+      - DJANGO_ALLOWED_HOSTS='localhost','127.0.0.1','::1','192.168.1.220'
