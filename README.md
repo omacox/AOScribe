@@ -2,6 +2,8 @@
 
 ## System - Outline
 
+<img src="./images/mapofsite.png" alt="Home Page" width="400">
+
 - First journey into Django framework using python.  
 
 - Below is the current state in final Alpha stage with some code and database configuration remains.
