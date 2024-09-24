@@ -45,6 +45,8 @@
 <img src="./images/data.PNG" alt="Data Page" width="200">
 
 ### Logout
+  
+- Logout button returns to the home screen on the unauthorized side of the site
 
 ### Dashboard
 
@@ -58,9 +60,9 @@
 
 ### database readme <draft separate file>
 
-### =============================================================================
-
 ### Fast Track
+
+-----------------------------------------
 
 ```bash
 sudo apt update && sudo apt upgrade
@@ -109,8 +111,7 @@ ngrok http 8000
 
 - goto to ### Step 2: Dockerize the Django Project
 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-Setting up Django on Ubuntu involves several key steps, from installing Python and setting up a virtual environment to installing Django itself and setting up your project. Here’s a detailed outline to help you through the process:
+  - Setting up Django on Ubuntu involves several key steps, from installing Python and setting up a virtual environment to installing Django itself and setting up your project. Here’s a detailed outline to help you through the process:
 
 ### 1. Prepare Your System
 
@@ -118,14 +119,18 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   Before you begin, make sure your system’s package list and packages are up-to-date.
 
   ```bash
+  
   sudo apt update && sudo apt upgrade
+  
   ```
 
 - Install Python and Pip:
   Django is a Python web framework, so you need Python installed along with pip, which is Python’s package installer.
 
   ```bash
+
   sudo apt install python3 python3-pip
+
   ```
 
 ### 2. Set Up a Virtual Environment
@@ -134,17 +139,21 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   It’s best practice to use a virtual environment for Python projects. This isolates your project’s dependencies from the system’s Python.
 
   ```bash
+
   sudo apt install python3-venv
+
   ```
 
 - Create and Activate a Virtual Environment:
   Navigate to the directory where you want your Django project to reside, or create a new directory.
 
   ```bash
+
   mkdir my_django_project
   cd my_django_project
   python3 -m venv myenv
   source myenv/bin/activate
+
   ```
 
 ### 3. Install Django
@@ -153,7 +162,9 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   With your virtual environment activated, install Django.
 
   ```bash
+
   pip install django
+
   ```
 
 ### 4. Start a Django Project
@@ -162,7 +173,9 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   Once Django is installed, you can create a new project with the `django-admin` command.
 
   ```bash
+
   django-admin startproject myproject .
+
   ```
 
 - Structure of Your Project:
@@ -177,7 +190,9 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   Apply the initial database migrations with the following command:
 
   ```bash
+
   python manage.py migrate
+
   ```
 
 ### 6. Start the Development Server
@@ -186,7 +201,9 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   Test your setup by running Django’s development server.
 
   ```bash
+
   python manage.py runserver
+
   ```
 
   This command starts a web server on <http://127.0.0.1:8000> where you can see your new project.
@@ -197,7 +214,9 @@ Setting up Django on Ubuntu involves several key steps, from installing Python a
   Django includes a built-in admin panel that you can use to manage data. Create a superuser to access it.
 
   ```bash
+
   python manage.py createsuperuser
+
   ```
 
 - Access the Admin Panel:
@@ -225,13 +244,17 @@ To configure your Django project to be accessible from other devices on your loc
 First, you need to find the IP address of the machine where your Django project is running. This IP should be accessible within your local network. You can find your local IP address by running the following command in your terminal:
 
 ```bash
+
 hostname -I
+
 ```
 
 Or you can use `ifconfig` (you might need to install it using `sudo apt install net-tools`):
 
 ```bash
+
 ifconfig
+
 ```
 
 Look for an output similar to `192.168.x.x` under the appropriate network interface (usually `eth0` for Ethernet or `wlan0` for Wi-Fi).
@@ -241,7 +264,9 @@ Look for an output similar to `192.168.x.x` under the appropriate network interf
 Edit your Django project’s settings file (`myproject/settings.py`). You need to allow your host machine’s IP address or use a wildcard to allow all hosts during development. However, be cautious with wildcards and never use them in production:
 
 ```python
+
 ALLOWED_HOSTS = ['192.168.x.x', 'localhost', '127.0.0.1']
+
 ```
 
 Replace `192.168.x.x` with your actual local IP address.
@@ -251,7 +276,9 @@ Replace `192.168.x.x` with your actual local IP address.
 By default, Django’s development server runs on localhost (`127.0.0.1`). To make your server accessible from other machines on your local network, you need to run it bound to your local IP address or `0.0.0.0` (which means all available IPv4 addresses on the local machine):
 
 ```bash
+
 python manage.py runserver 0.0.0.0:8000
+
 ```
 
 Using `0.0.0.0` allows connections from any computer in your network to your Django development server.
@@ -260,8 +287,10 @@ Using `0.0.0.0` allows connections from any computer in your network to your Dja
 
 On another device in the same network, open a web browser and enter:
 
-```
+```plaintext
+
 http://192.168.x.x:8000
+
 ```
 
 Replace `192.168.x.x` with the IP address you found earlier. You should see your Django project’s homepage.
@@ -271,8 +300,10 @@ Replace `192.168.x.x` with the IP address you found earlier. You should see your
 Ensure that your firewall settings allow traffic on the port you're using (default is 8000). If you’re using `ufw`, you might need to allow this port:
 
 ```bash
+
 sudo ufw allow 8000
 sudo ufw restart
+
 ```
 
 ### 6. Testing
@@ -293,12 +324,14 @@ Running Django in a Docker container is a great way to ensure consistency across
 First, ensure Docker is installed on your server. If it's not already installed, you can install Docker using the following commands:
 
 ```bash
+
 sudo apt update
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
 sudo apt update
 sudo apt install docker-ce
+
 ```
 
 ### Step 2: Dockerize the Django Project
@@ -308,6 +341,7 @@ sudo apt install docker-ce
 Navigate to your Django project directory and create a `Dockerfile`. This file describes the Docker image and how your application should be run inside the container.
 
 ```Dockerfile
+
 # Use an official Python runtime as a parent image
 FROM python:3.9-slim
 
@@ -328,6 +362,7 @@ COPY . /app/
 
 # Run the application on port 8000
 CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
+
 ```
 
 #### Create a `requirements.txt`
@@ -335,9 +370,11 @@ CMD ["gunicorn", "--bind", "0.0.0.0:8000", "myproject.wsgi:application"]
 List all Python packages your Django project needs in a `requirements.txt` file:
 
 ```plaintext
+
 Django>=3.2,<4.0
 gunicorn
 # Any other libraries you need
+
 ```
 
 #### Create a docker-compose.yml File
@@ -345,6 +382,7 @@ gunicorn
 For easy management of your Docker container, including settings for production and development environments, create a `docker-compose.yml` file:
 
 ```yaml
+
 version: '3.8'
 
 services:
@@ -359,6 +397,7 @@ services:
       - DEBUG=0
       - SECRET_KEY=YourSecretKeyHere
       - DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+
 ```
 
 Adjust `DJANGO_ALLOWED_HOSTS` to include your server's IP address or domain if known.
@@ -370,9 +409,11 @@ Adjust `DJANGO_ALLOWED_HOSTS` to include your server's IP address or domain if k
 Navigate to the directory containing your `docker-compose.yml` file and run:
 
 ```bash
+
 sudo apt install docker-compose  
 cd my_django_project
 sudo docker-compose up --build
+
 ```
 
 This command builds the image from your Dockerfile and starts running your Django application.
