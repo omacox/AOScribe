@@ -304,14 +304,14 @@ By following these steps, you should have a fully functioning MySQL server on yo
 
 ```bash
 
-python manage.py makemigrations
+cleapython manage.py makemigrations
 python manage.py migrate
 
 ```
 
 ### Web Setup to test access
 
-``` bash
+```bash
 
 ngrok http 8000
 
