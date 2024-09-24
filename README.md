@@ -1,6 +1,6 @@
 # AOScribe
 
-## System - Outline
+## System - Map / Page Images / Outline
 
 <img src="./images/mapofsite.png" alt="Home Page" width="400">
 
