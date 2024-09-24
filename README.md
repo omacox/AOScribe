@@ -12,43 +12,43 @@
 
 ### Home Page
 
-<img src="./images/home.png" alt="Home Page" width="200">
+<img src="./images/home.PNG" alt="Home Page" width="200">
 
 ### Contact
 
-<img src="./images/contact.png" alt="Contact Page" width="200">
+<img src="./images/contact.PNG" alt="Contact Page" width="200">
 
 ### Login
 
-<img src="./images/login.png" alt="Login Page" width="200">
+<img src="./images/login.PNG" alt="Login Page" width="200">
 
 ### Register
 
-<img src="./images/register.png" alt="Register Page" width="200">
+<img src="./images/register.PNG" alt="Register Page" width="200">
 
 ### Dashboard
 
-<img src="./images/dashboard.png" alt="Dashboard Page" width="200">
+<img src="./images/dashboard.PNG" alt="Dashboard Page" width="200">
 
 ### Approved Registered users Area
 
 ### Profile
 
-<img src="./images/Profile.png" alt="Profile Page" width="200">
+<img src="./images/Profile.PNG" alt="Profile Page" width="200">
 
 ### Message
 
-<img src="./images/message.png" alt="Message Page" width="200">
+<img src="./images/message.PNG" alt="Message Page" width="200">
 
 ### Data
 
-<img src="./images/data.png" alt="Data Page" width="200">
+<img src="./images/data.PNG" alt="Data Page" width="200">
 
 ### Logout
 
 ### Dashboard
 
-<img src="./images/dashboard_login.png" alt="Dashboard Member Access Page" width="200">
+<img src="./images/dashboard_login.PNG" alt="Dashboard Member Access Page" width="200">
 
 ## Django Admin
 
