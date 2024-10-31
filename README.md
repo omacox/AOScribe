@@ -52,9 +52,17 @@
 
 ### Dashboard
 
-<img src="./images/dashboard_login.PNG" alt="Dashboard Member Access Page" width="200">
+<img src="./images/dashboard1.png" alt="Dashboard Member Access Page" width="200">
+<img src="./images/dashboard2.png" alt="Dashboard Member Access Page" width="200">
+
+### Process
+
+<img src="./images/process1.png" alt="Processing Page" width="200">
+<img src="./images/process2.png" alt="Processing Page" width="200">
 
 ## Django Admin
+
+<img src="./images/admin.png" alt="Django Admin Access Page" width="200">
 
 - pages in development
 
